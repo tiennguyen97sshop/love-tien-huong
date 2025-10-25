@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kỷ niệm 1 năm bên nhau – Tiến & Hường</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background-color: #ffffff;
+      color: #333;
+      overflow-x: hidden;
+    }
+    section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px;
+      position: relative;
+    }
+    h1 {
+      font-size: 3em;
+      margin: 0;
+      color: #444;
+      opacity: 0;
+      animation: fadeIn 2s forwards;
+    }
+    h2 {
+      font-weight: 400;
+      color: #777;
+      margin-top: 10px;
+      opacity: 0;
+      animation: fadeIn 2s forwards 1s;
+    }
+    p {
+      max-width: 600px;
+      line-height: 1.7;
+      opacity: 0;
+      animation: fadeInUp 2s forwards;
+    }
+    .love {
+      font-size: 1.2em;
+      margin-top: 30px;
+      color: #e74c3c;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+    @keyframes fadeIn { to { opacity: 1; } }
+    @keyframes fadeInUp {
+      from { transform: translateY(30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    .hearts {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      overflow: hidden;
+      z-index: -1;
+    }
+    .heart {
+      position: absolute;
+      width: 15px; height: 15px;
+      background: rgba(231, 76, 60, 0.7);
+      transform: rotate(45deg);
+      animation: floatHearts 8s infinite ease-in;
+    }
+    .heart::before, .heart::after {
+      content: ""; position: absolute;
+      width: 15px; height: 15px;
+      background: rgba(231, 76, 60, 0.7);
+      border-radius: 50%;
+    }
+    .heart::before { top: -7.5px; left: 0; }
+    .heart::after { left: -7.5px; top: 0; }
+    @keyframes floatHearts {
+      0% { transform: translateY(100vh) rotate(45deg); opacity: 1; }
+      100% { transform: translateY(-10vh) rotate(45deg); opacity: 0; }
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      max-width: 900px;
+      width: 100%;
+      margin-top: 40px;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    .popup {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.8);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+    .popup img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 10px;
+    }
+    .popup.active { display: flex; }
+    footer {
+      font-size: 0.9em;
+      color: #aaa;
+      margin-top: 40px;
+    }
+    .audio-control {
+      position: fixed;
+      bottom: 20px; right: 20px;
+      background: rgba(255,255,255,0.8);
+      border: 1px solid #ddd;
+      border-radius: 50%;
+      width: 50px; height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="hearts"></div>
+  <section id="intro">
+    <h1>Tiến & Hường</h1>
+    <h2>Kỷ niệm 1 năm bên nhau ❤️</h2>
+    <p class="timeline">Bắt đầu quen nhau: <b>18/09</b><br>Chính thức yêu nhau: <b>22/11/2024 (22/10 âm lịch)</b></p>
+  </section>
+  <section id="story">
+    <h2>Hành trình của chúng mình</h2>
+    <p>Từ những tin nhắn đầu tiên, đến những buổi hẹn hò đầy kỷ niệm – mỗi khoảnh khắc đều là một phần đáng nhớ trong câu chuyện của anh và em.<br>Cảm ơn vì đã cùng nhau đi qua những ngày vui, ngày buồn, và vẫn nắm tay nhau thật chặt.</p>
+  </section>
+  <section id="album">
+    <h2>Album kỷ niệm 📸</h2>
+    <div class="gallery">
+      <img src="https://placekitten.com/400/400" alt="Ảnh 1">
+      <img src="https://placekitten.com/401/400" alt="Ảnh 2">
+      <img src="https://placekitten.com/402/400" alt="Ảnh 3">
+      <img src="https://placekitten.com/403/400" alt="Ảnh 4">
+      <img src="https://placekitten.com/404/400" alt="Ảnh 5">
+      <img src="https://placekitten.com/405/400" alt="Ảnh 6">
+    </div>
+  </section>
+  <section id="message">
+    <h2>Lời nhắn gửi đến em 💌</h2>
+    <p>Từ ngày 18 tháng 9 — ngày đầu tiên anh và em quen nhau, đến ngày 22 tháng 11 — ngày em đồng ý làm người yêu anh, mọi thứ như một hành trình đẹp nhất mà anh từng có.<br><br>Một năm trôi qua, chúng mình đã cùng nhau đi qua nhiều điều — vui có, buồn có, nhưng trên hết là yêu thương.<br><br>Cảm ơn em, Hường, vì đã ở bên anh, vì đã chọn anh giữa hàng vạn người ngoài kia.<br><br>Anh không biết tương lai sẽ ra sao, chỉ mong những tháng năm sau này, anh vẫn được cùng em nắm tay đi qua từng mùa như thế.<br><br><b>– Tiến ❤️ 22/11/2025 –</b></p>
+    <div class="love">Mãi yêu em 💖</div>
+  </section>
+  <footer>© 2025 Tiến dành tặng Hường | Kỷ niệm 1 năm yêu nhau</footer>
+  <div class="audio-control" id="audioBtn">🎵</div>
+  <audio id="bgm" loop>
+    <source src="https://www.youtube.com/watch?v=2Vv-BfVoq4g" type="audio/mp3">
+  </audio>
+  <div class="popup" id="popup">
+    <img src="" alt="">
+  </div>
+  <script>
+    const heartsContainer = document.querySelector(".hearts");
+    for (let i = 0; i < 20; i++) {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = 5 + Math.random() * 5 + "s";
+      heart.style.opacity = Math.random();
+      heartsContainer.appendChild(heart);
+    }
+    const bgm = document.getElementById("bgm");
+    const btn = document.getElementById("audioBtn");
+    let playing = false;
+    btn.addEventListener("click", () => {
+      if (!playing) {
+        bgm.play();
+        playing = true;
+        btn.textContent = "⏸️";
+      } else {
+        bgm.pause();
+        playing = false;
+        btn.textContent = "🎵";
+      }
+    });
+    const images = document.querySelectorAll(".gallery img");
+    const popup = document.getElementById("popup");
+    const popupImg = popup.querySelector("img");
+    images.forEach(img => {
+      img.addEventListener("click", () => {
+        popupImg.src = img.src;
+        popup.classList.add("active");
+      });
+    });
+    popup.addEventListener("click", () => {
+      popup.classList.remove("active");
+    });
+  </script>
+</body>
+</html>
